@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+     <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <nav class="navbar">
+        <div class="navbar-logo">
+          <a href="#">
+            <!-- meetup</a> -->
+            <img src="image/meetup.png" alt="Logo"></a>
+        </div>
+        <div class="search-btn">
+            <input type="text" id="srch" placeholder="Search"/>
+            <!-- <i class="fa fa-search"></i> -->
+        </div>
+        <div class="navbar-links" id="navbar-links">
+          <ul>
+            <li><a href="#" class="active"><i class="fas fa-home">
+                <div class="menu-items">Home</div>
+            </i></a></li>
+            <li><a href="#"><i class="fas fa-user-friends">
+                <div class="menu-items">My Network</div>
+            </i></a></li>
+            <li><a href="#"><i class="fas fa-briefcase">
+                <div class="menu-items">Jobs</div>
+            </i></a></li>
+            <li><a href="#"><i class="fas fa-comment-alt">
+                <div class="menu-items">Messaging</div>
+            </i></a></li>
+            <li><a href="#"><i class="fas fa-bell">
+                <div class="menu-items">Notifications</div>
+            </i></a></li>
+            <li><a href="#">
+                <img src="image/user.jpg" class="user-img" alt="Logo"></a>
+                <!-- <i class="fas fa-user">-->
+                <div id="hh">Me <i class="fas fa-angle-down"></i></div>
+            </i></a></li>
+                <li >
+                    <a id="signoutlink"  href="">Sign Out</a>
+                </li>
+          </ul>
+        </div>
+        <div class="navbar-toggle" id="navbar-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+      
+      <!------------------ navbar end --------------------->
+      <div class="center">
+    
+      </div>
+      <!-- --------------footer start------------------ -->
+      <div id="footer">
+        <div class="icon">
+            <a class="btn btn-light btn-social mr-2"
+                href="https://www.facebook.com/profile.php?id=100070502261335"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/divya-sharma-8a218122a"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+            <a class="btn btn-light btn-social"
+                href=" https://www.instagram.com/invites/contact/?i=1v4qijoamnj3u&utm_content=mqrex7f"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="tags">
+            <p><b>Privacy</b> | <b>Terms</b> | <b>FAQs</b> | <b>Help</b></p>
+            <p>&copy<a href="#">copyright</a> All Rights Reserved. Designed by
+                <a href="https://htmlcodex.com">Divya Sharma</a>
+            </p>
+        </div>
+        <div class="container-flex">
+          Your Account
+            <ul>
+                <li><a href="#">Sign up</a></li>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Become an affiliate</a></li>
+            </ul>
+        </div>
+    </div>
+<!-- <script src="script.js"></script>       -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getDatabase , ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+    const firebaseConfig = {
+    apiKey: "AIzaSyCuHrtSAPLC6CQeuv9WkaWcjksWFWly6TY",
+    authDomain: "meetup-5ffb3.firebaseapp.com",
+    databaseURL: "https://meetup-5ffb3-default-rtdb.firebaseio.com",
+    projectId: "meetup-5ffb3",
+    storageBucket: "meetup-5ffb3.appspot.com",
+    messagingSenderId: "180793006827",
+    appId: "1:180793006827:web:7665f36e7487bcf42e3cae"
+  };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const auth = getAuth();
+    //............................................Ref.........................//
+    let userlink = document.getElementById('userlink');
+    let signoutlink = document.getElementById('signoutlink');
+    let header = document.getElementById('hh');
+    var currentUser = null;
+    //.........................................Functions...........................//
+    function getUsername(){
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+        if(keepLoggedIn == "yes"){
+            currentUser = JSON.parse(localStorage.getItem('user'));
+        }
+        else{
+            currentUser = JSON.parse(sessionStorage.getItem('user'))
+        }
+    }
+    function Signout(){
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location="login.html";
+    }
+    window.onload = function(){
+        getUsername();
+        if(currentUser ==null){
+            signoutlink.href ="login.html";
+        }
+        else{
+           
+            header.innerText = currentUser.fullname;
+            signoutlink.innerText ="Sign out";
+            signoutlink.href ="javascript:Signout()";
+        }
+    }
+  </script>
+ 
+</body>
+</html>
