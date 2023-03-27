@@ -136,12 +136,12 @@
         let keepLoggedIn = document.getElementById('customSwitch1').checked;
         if(!keepLoggedIn){
             sessionStorage.setItem('user',JSON.stringify(user));
-            window.location = "index.html";
+            window.location = "dashboard.html";
         }
         else{
             localStorage.setItem('keepLoggedIn','yes');
             localStorage.setItem('user',JSON.stringify(user));
-            window.location="index.html";
+            window.location="dashboard.html";
         }
     }
     submit.addEventListener('click', AuthenticateUser);
