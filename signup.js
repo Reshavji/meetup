@@ -69,7 +69,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebas
                 })
                 .then(()=>{
                     alert("user Added Successfully!")
-                    window.location="login.html";
+                    window.location="index.html";
                 })
                 .catch((error)=>{
                     alert("error"+error);
