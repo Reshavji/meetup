@@ -2,124 +2,93 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="    viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="sign.css">
-    <title>Sign up</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="forms-container">
-            <div class="signin-signup">
-                <div class="box"style="width:350px" >
-                    <h2 class="title">Signin Here!..</h2>
-                 
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <nav action="" class="sign-in-form">
+          <h2 class="title">Login Here!..</h2>
                     <div class="input-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" placeholder="Enter User name"class="textinput" id="userInp" />
+                        <input type="text" placeholder="Enter User name" class="textinput" id="userInp" />
                     </div>
                     <div class="input-field">
                         <i class="fa fa-lock"></i>
                         <input type="password" placeholder="Enter Password" class="textinput" id="passInp" />
+                        <i class="fa fa-eye" id="togglePassword" style="cursor: pointer;"></i>
                     </div>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="customSwitch1">
                         <label class="form-check-label" for="customSwitch1">Keep me Login</label>
-                      </div>
-                    <a class="pass" href="#">Forgot your password?</a><br>
-                    <button type="text" id="sub_btn" class="btn solid">Sign in</button><br><br>
+                    </div>
+                    <a class="pass" href="#">Forgot your password?</a>
+                    <button type="text" id="sub_btn" class="btn solid">Sign in</button><br>
                     <div class="social-container ">
                         <a href="#" class="fa fa-facebook"></a>
                         <a href="#" class="fa fa-twitter"></a>
                         <a href="#" class="fa fa-google"></a>
                         <a href="#" class="fa fa-linkedin"></a>
-                    </div>  
-                </div>
-            </div>
-        </div>
-        <div class="panels-container">
-            <div class="panel left-panel">
-                <div class="content">
-                    <h3>You don't have an account?</h3>
-                    <p>Create your account right now</p>
-                    <a href="signup.html" class="badge-secondary"><button class="btn transparent"
-                            id="sign-up-btn">Register</button></a>
-                </div>
-            </div>
+                    </div>
+        </nav>
+        
+      </div>
+    </div>
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>You don't have an account?</h3>
+          <p>Create your account right now to follow people and like publications</p>
+          <a href="signup.html" class="badge-secondary"><button class="btn transparent"
+            id="sign-up-btn">Register</button></a>
         </div>
     </div>
+    </div>
+  </div>
 </body>
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-    import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
-    const firebaseConfig = {
-        apiKey: "AIzaSyCuHrtSAPLC6CQeuv9WkaWcjksWFWly6TY",
-        authDomain: "meetup-5ffb3.firebaseapp.com",
-        databaseURL: "https://meetup-5ffb3-default-rtdb.firebaseio.com",
-        projectId: "meetup-5ffb3",
-        storageBucket: "meetup-5ffb3.appspot.com",
-        messagingSenderId: "180793006827",
-        appId: "1:180793006827:web:7665f36e7487bcf42e3cae"
-    };
+<script>
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase();
-    //...........................................The Refrences.......................//
+const htmlEl = document.getElementsByTagName("html")[0];
+const currentTheme = localStorage.getItem("theme")
+  ? localStorage.getItem("theme")
+  : null;
+if (currentTheme) {
+  htmlEl.dataset.theme = currentTheme;
+}
+const toggleTheme = (theme) => {
+  htmlEl.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+};
 
-    const username = document.getElementById('userInp');
-    const pass = document.getElementById('passInp');
-    const submit = document.getElementById('sub_btn');
-    //..................................Authentication...............................//
-    function AuthenticateUser() {
-        const dbref = ref(db);
+const togglePassword = document.querySelector("#togglePassword");
+const password = document.querySelector("#passInp");
 
-        get(child(dbref, "userList/" + username.value)).then((snapshot) => {
-            if (snapshot.exists()) {
-                let dbpass = decPass(snapshot.val().password);
-                console.log(dbpass);
-                if (dbpass == pass.value) {
-                    login(snapshot.val());
-                }
-                else {
-                    alert("User does not exist!");
-                }
-            }
-            else {
-                alert("Username or Password is Invalid");
-            }
+togglePassword.addEventListener("click", function (e) {
+  const type =
+    password.getAttribute("type") === "password" ? "text" : "password";
+  password.setAttribute("type", type);
+  this.classList.toggle("fa-eye-slash");
+});
 
-        });
+const toggleReg = document.querySelector("#toggleReg");
+const pass = document.querySelector("#id_reg");
 
+toggleReg.addEventListener("click", function (e) {
+  const type = pass.getAttribute("type") === "password" ? "text" : "password";
+  pass.setAttribute("type", type);
+  this.classList.toggle("fa-eye-slash");
+});
 
-    }
-    //.................................Decryption.......................//
-    function decPass(dbpass) {
-        var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
-        return pass12.toString(CryptoJS.enc.Utf8);
-        console.log(pass12.toString(CryptoJS.enc.Utf8));
-    }
-    //..................................Login..........................//
-    function login(user) {
-        let keepLoggedIn = document.getElementById('customSwitch1').checked;
-        if (!keepLoggedIn) {
-            sessionStorage.setItem('user', JSON.stringify(user));
-            window.location = "dashboard.html";
-        }
-        else {
-            localStorage.setItem('keepLoggedIn', 'yes');
-            localStorage.setItem('user', JSON.stringify(user));
-            window.location = "dashboard.html";
-        }
-    }
-    submit.addEventListener('click', AuthenticateUser);
-</script>
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
+<script type="module" src="firebase.js"></script>
 
 </html>
