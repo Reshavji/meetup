@@ -55,19 +55,6 @@
   </div>
 </body>
 <script>
-
-const htmlEl = document.getElementsByTagName("html")[0];
-const currentTheme = localStorage.getItem("theme")
-  ? localStorage.getItem("theme")
-  : null;
-if (currentTheme) {
-  htmlEl.dataset.theme = currentTheme;
-}
-const toggleTheme = (theme) => {
-  htmlEl.dataset.theme = theme;
-  localStorage.setItem("theme", theme);
-};
-
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#passInp");
 
@@ -77,16 +64,6 @@ togglePassword.addEventListener("click", function (e) {
   password.setAttribute("type", type);
   this.classList.toggle("fa-eye-slash");
 });
-
-const toggleReg = document.querySelector("#toggleReg");
-const pass = document.querySelector("#id_reg");
-
-toggleReg.addEventListener("click", function (e) {
-  const type = pass.getAttribute("type") === "password" ? "text" : "password";
-  pass.setAttribute("type", type);
-  this.classList.toggle("fa-eye-slash");
-});
-
     </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
 <script type="module" src="firebase.js"></script>
