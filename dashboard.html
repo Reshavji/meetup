@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="style.css">
 </head>
 <body >
-    <nav class="navbar">
+   <nav class="navbar">
         <div class="navbar-logo">
           <a href="#">
             <!-- meetup</a> -->
@@ -37,60 +37,123 @@
             <li><a href="#"><i class="fas fa-bell">
                 <div class="menu-items">Notifications</div>
             </i></a></li>
-            <li><a href="#">
-                <img src="image/user.jpg" class="user-img" alt="Logo"></a>
-                <!-- <i class="fas fa-user">-->
-                <div id="hh">Me <i class="fas fa-angle-down"></i></div>
-            </i></a></li>
-                <li >
-                    <a id="signoutlink"  href="">Sign Out</a>
-                </li>
+            <li></li>
+                                 
           </ul>
+          <a href="#">
+            <img src="image/user.jpg" class="user-img" id="proimg" alt="Logo"></a>
+            <!-- <i class="fas fa-user">-->
+       
+        </i></a>
+          <a id="signoutlink"  href="">Sign Out</a>
         </div>
         <div class="navbar-toggle" id="navbar-toggle">
           <i class="fas fa-bars"></i>
         </div>
       </nav>
       
-      <!------------------ navbar end --------------------->
-      <div class="center">
-    
-      </div>
-      <!-- --------------footer start------------------ -->
-      <div id="footer">
-        <div class="icon">
-            <a class="btn btn-light btn-social mr-2"
-                href="https://www.facebook.com/profile.php?id=100070502261335"><i
-                    class="fa-brands fa-facebook-f"></i></a>
-            <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/divya-sharma-8a218122a"><i
-                    class="fa-brands fa-linkedin-in"></i></a>
-            <a class="btn btn-light btn-social"
-                href=" https://www.instagram.com/invites/contact/?i=1v4qijoamnj3u&utm_content=mqrex7f"><i
-                    class="fa-brands fa-instagram"></i></a>
+      <div class="container-box">
+        <!-- ----------------------left-sidebar-------------------------------- -->
+        <div class="left-sidebar">
+            <div class="sidebar-profile-box">
+                <img src="image/profile-bg-img.jpg" width="100%">
+                <div class="sidebar-profile-info">
+                    <img id="profile" src="image/user1.jpg">
+                    <h1 id="pn"></h1>
+                    <h3>Web Developer at Microsoft</h3>
+                    <ul>
+                        <li>your profile views<span>52</span></li>
+                        <li>your post views<span>900</span></li>
+                        <li>your connections<span>500+</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-profile-link">
+                    <a href="#"><img src="image/free.png">My items</a>
+                    <a href="#"><img src="image/premium.jpg">Try Premium</a>
+                </div>
+            </div>
+            <div class="sidebar-activity">
+                <h3>RECENT</h3>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>web Development</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>user interface</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>Online Learning</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>Learn Online</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>Group Learning</a>
+                <h3>Groups</h3>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>Web Design Group</a>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>HTML & CSS Learner</a>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>Python &Javascript</a>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>Learn Coding Online</a>
+                <h3>HASHTAG</h3>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <div class="discover-more-links">
+                    <a href="#">Discover more</a>
+                </div>
+            </div>
         </div>
-        <div class="tags">
-            <p><b>Privacy</b> | <b>Terms</b> | <b>FAQs</b> | <b>Help</b></p>
-            <p>&copy<a href="#">copyright</a> All Rights Reserved. Designed by
-                <a href="https://htmlcodex.com">Meetup</a>
-            </p>
-        </div>
-        <div class="container-flex">
-          Your Account
-            <ul>
-                <li><a href="#">Sign up</a></li>
-                <li><a href="#">Log in</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Become an affiliate</a></li>
-            </ul>
+        <!-- --------------------------------main-container----------------------- -->
+        <div class="main-container"></div>
+        <!-- --------------------------------------right-sideba-------------------------------- -->
+        <div class="right-sidebar">
+            <div class="sidebar-news">
+                <i class="fa-solid fa-circle-exclamation" class="info-icon"></i> 
+                <h2>Trending news</h2>
+                <a href="#">High demand for skilled manpower</a>
+                <span>1d ago &middot; 10,943 readers</span>
+
+                <a href="#">Careers growing horizontally too</a>
+                <span>10d ago &middot; 1,455 readers</span>
+
+                <a href="#">less worrk visa for Us,more for UK</a>
+                <span>23d ago &middot; 2,843 readers</span>
+
+                <a href="#">more hiring = higher confidence?</a>
+                <span>25d ago &middot; 1,313 readers</span>
+
+                <a href="#">Goutam Adani is the world's third richest</a>
+                <span>28d ago &middot; 4,121 readers</span>
+
+                <a href="#" class="read-more-links">Read More</a>
+            </div>
+            <div class="sidebar-ad">
+                <small>Ad &middot;&middot;&middot; </small>
+                <p>Master 5 principle of web design</p>
+                <div>
+                <img id="brandimg"src="image/user1.jpg">
+                <img src="image/mi-icon.jpg" class="mi-icon">
+                </div>
+                <b>Brand and Demand in Xiomi</b>
+                <a href="#" class="ad-link">Learn More</a>
+            </div>
+            <div class="sidebar-useful-links">
+                <a href="#">About</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Help center</a>
+                <a href="#">Privacy policy</a>
+                <a href="#">Advertising</a>
+                <a href="#">Get the App</a>
+                <a href="#">More</a>
+                <div class="copyright-msg">
+                    <img src="image/Meetup_Logo.png">
+                    <p>meetup &#169; 2022. All right reserved</p>
+                </div>
+            </div>
         </div>
     </div>
-<!-- <script src="script.js"></script>       -->
+    <script src="script.js"></script>
 <script>
   
     //............................................Ref.........................//
     let userlink = document.getElementById('userlink');
     let signoutlink = document.getElementById('signoutlink');
-    let header = document.getElementById('hh');
+    let brandimg = document.getElementById('brandimg');
+    let proname = document.getElementById('pn');
+    let proimg = document.getElementById('proimg');
+    let profile = document.getElementById('profile');
     var currentUser = null;
     //.........................................Functions...........................//
     function getUsername(){
@@ -111,11 +174,15 @@
     window.onload = function(){
         getUsername();
         if(currentUser ==null){
+            location.replace("index.html");
             signoutlink.href ="index.html";
         }
         else{
            
-            header.innerText = currentUser.fullname;
+            brandimg.src =currentUser.name;
+            proname.innerText = currentUser.username;
+            profile.src = currentUser.name;
+            proimg.src = currentUser.name;
             signoutlink.innerText ="Sign out";
             signoutlink.href ="javascript:Signout()";
         }
