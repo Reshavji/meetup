@@ -25,26 +25,27 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebas
         return str === null || str.match(/^ *$/) !==null;
     }
     function Validation(){
-        let nameregex =/^[a-zA-Z\s]+$/;
+        let nameregex =/^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/;
         let emailregex = /^[a-zA-z0-9]+@(gmail|yahoo|outlook)\.com$/;
         let userregex=/^[a-zA-z0-9]{5,}$/;
         
-        if(isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value)|| isEmptyOrSpaces(username.value)|| isEmptyOrSpaces(pass.value)){
+        if(isEmptyOrSpaces(name.value)|| isEmptyOrSpaces(email.value)|| isEmptyOrSpaces(username.value)|| isEmptyOrSpaces(pass.value)){
             alert("Please fill all the empty fields!");
             return false;
         }
-        if(!nameregex.test(name.value)){
-          alert("The name should only contain alphabets!");
-          return false;
-        }
+        
         if(!emailregex.test(email.value)){
           alert("Enter a valid email!");
           return false;
         }
         if(!userregex.test(username.value)){
-          alert("The name should only contain alphabets!");
+          alert("The name should only contain alphabets without space!");
           return false;
         }
+        if(!nameregex.test(name.value)){
+            alert("Enter URL not correct!");
+            return false;
+          }
         return true;
     }
     //.............................................Register User........................//
@@ -61,7 +62,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebas
             else{
                 set(ref(db,"userList/"+username.value),
                 {
-                    fullname:name.value,
+                    name:name.value,
                     email:email.value,
                     username:username.value,
                     password:encPass()
