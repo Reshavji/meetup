@@ -26,7 +26,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebas
     }
     function Validation(){
         let nameregex =/^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/;
-        let emailregex = /^[a-zA-z0-9]+@(gmail|yahoo|outlook)\.com$/;
+        let emailregex = /^[a-zA-z0-9]+@(gmail|yahoo|outlook|cyclesat)\.com$/;
         let userregex=/^[a-zA-z0-9]{5,}$/;
         
         if(isEmptyOrSpaces(name.value)|| isEmptyOrSpaces(email.value)|| isEmptyOrSpaces(username.value)|| isEmptyOrSpaces(pass.value)){
