@@ -157,15 +157,13 @@
   .panel {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
     text-align: center;
     z-index: 7;
   }
   
   .left-panel {
     pointer-events: all;
-    padding: 3rem 17% 2rem 12%;    
+    margin-top: 120px;
   }
 
   
@@ -242,8 +240,15 @@
       top: initial;
       transition: 2s ease-in-out;
     }
-  
-    .signin-signup {
+    
+    .signup {
+      width: 100%;
+      left: 50%;
+      top: 90%;
+      transform: translate(-50%, -100%);
+      transition: 1s 0.8s ease-in-out;
+    }
+    .signin {
       width: 100%;
       left: 50%;
       top: 80%;
@@ -259,11 +264,13 @@
   
     .panel {
       flex-direction: row;
-      justify-content: space-around;
       align-items: center;
-      padding: 2.5rem 8%;
+      margin-bottom: 50px;
     }
-  
+   img{
+     height: 80px;
+     width: 150px;
+   }
     .panel .content {
       padding-right: 15%;
       transition: 0.9s 0.8s ease-in-out;
@@ -285,6 +292,7 @@
     }
     .left-panel {
       grid-row: 1 / 2;
+        margin: 2px;
     }
   
     .container.sign-up-mode:before {
@@ -315,11 +323,14 @@
   
     .panel p {
       opacity: 0;
+      padding: 1px;
     }
-  
     .container:before {
       bottom: 75%;
       left: 50%;
+    }
+    .left-panel{
+      margin: 2px;
     }
   
     .container.sign-up-mode:before {
