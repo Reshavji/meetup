@@ -244,14 +244,14 @@
     .signup {
       width: 100%;
       left: 50%;
-      top: 90%;
+      top: 85%;
       transform: translate(-50%, -100%);
       transition: 1s 0.8s ease-in-out;
     }
     .signin {
       width: 100%;
       left: 50%;
-      top: 80%;
+      top: 76%;
       transform: translate(-50%, -100%);
       transition: 1s 0.8s ease-in-out;
     }
