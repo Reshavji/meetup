@@ -292,7 +292,7 @@
     }
     .left-panel {
       grid-row: 1 / 2;
-        margin: 2px;
+        margin:auto;
     }
   
     .container.sign-up-mode:before {
@@ -330,7 +330,7 @@
       left: 50%;
     }
     .left-panel{
-      margin: 2px;
+      margin: auto;
     }
   
     .container.sign-up-mode:before {
