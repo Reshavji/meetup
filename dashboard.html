@@ -169,12 +169,12 @@
         sessionStorage.removeItem('user');
         localStorage.removeItem('user');
         localStorage.removeItem('keepLoggedIn');
-        window.location="index.html";
+        location.replace("index.html");
     }
     window.onload = function(){
         getUsername();
         if(!currentUser){
-            location.assign("index.html");
+            location.replace("index.html");
             signoutlink.href ="index.html";
         }
         else{
