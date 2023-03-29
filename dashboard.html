@@ -173,12 +173,11 @@
     }
     window.onload = function(){
         getUsername();
-        if(currentUser ==null){
-            location.replace("index.html");
+        if(!currentUser){
+            location.assign("index.html");
             signoutlink.href ="index.html";
         }
         else{
-           
             brandimg.src =currentUser.name;
             proname.innerText = currentUser.username;
             profile.src = currentUser.name;
