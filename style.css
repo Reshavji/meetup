@@ -10,14 +10,12 @@ body {
 }
 
 .navbar {
-  height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   color: #5f5f5f;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -83,9 +81,10 @@ body {
   position: relative;
 }
 .navbar-links .premium{
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration:underline;
   color: crimson;
+  
 }
 .navbar-links li a::after {
   content: '';
@@ -187,6 +186,7 @@ body {
   display:block;
   max-height: 400px;
 }
+
 .profile-menu{
   background: whitesmoke;
   /* background: #222; */
@@ -237,7 +237,7 @@ body {
 }
 /* ---------------navbar-end-------------------*/
 .container-box {
- padding: 20px 6%;
+ padding: 20px 1%;
  display: flex;
  flex-wrap: wrap;
  justify-content: space-between;
@@ -452,14 +452,6 @@ margin: 4px;
 .post{
 background-color: #fff;
 }
-.post-input textarea{
-  width: 100%;
-  border: 0;
-  outline: 0;
-  resize: none;
-  background: transparent;
-  margin-top: 8px;
-}
 .post-input{
   padding: 20px 25px 10px;
   display: flex;
@@ -575,8 +567,11 @@ margin-bottom: -2px;
   align-items: center;
 }
 .message{
-  border-radius:40px;
   margin-top:30px;
+  overflow: hidden;
+}
+.message-image{
+  height: 350px;
 }
 .manee{
   display: none;
@@ -601,10 +596,11 @@ color:gray;
 .post-activity{
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content:space-around;
    font-size: 14px;
    font-weight: 500;
    padding: 10px 0;
+   background-color: white;
 }
 .post-activity div{
   display: flex;
@@ -663,19 +659,15 @@ color:crimson;
     bottom:25px;
     
   }
-  /* #dell:hover{
-    width:10px;
-    height:10px;
-    background-color:#7d8182;
-  } */
   #del{
     position:relative;
     left:460px;
     bottom:64px;
   }
 #come{
+  margin-top: 10px;
   background-color: #fff;
-  height:70px;
+  height:60px;
 }
 #spann{
   background-color: #fff; 
@@ -1025,8 +1017,14 @@ padding: 0;
 
 
 
-
-
+.post-input textarea{
+  width: 100%;
+  border: 0;
+  outline: 0;
+  resize: none;
+  background: transparent;
+  margin-top: 8px;
+}
 
 
 
