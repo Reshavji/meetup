@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#">
+                <img src="https://1000logos.net/wp-content/uploads/2021/05/Meetup-logo.png" alt="Logo"></a>
+        </div>
+        <div class="search-btn">
+            <i class="fa fa-search"></i>
+            <input type="text" id="srch" placeholder="Search" />
+        </div>
+        <div class="navbar-links" id="navbar-links">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home">
+                            <div class="menu-items">Home</div>
+                        </i></a></li>
+                        <li><a href="message.html"><i class="fas fa-comment-alt">
+                            <div class="menu-items">Messaging</div>
+                        </i></a></li>
+                <li><a href="#"><i class="fas fa-feed">
+                            <div class="menu-items">News Feed</div>
+                        </i></a></li>
+                <li><a href="#">
+                    <img src="./image/profile.png" class="user-img" id="proimg" onclick="toggleMenu()" alt="Logo"></a>
+
+                    <!-- -------------profile-drop-down-menu------------    -->
+                    <div class="profile-menu-wrap" id="profileMenu">
+                        <div class="profile-menu">
+                            <div class="user-info">
+                                <img id="profile" src="image/user1.jpg">
+                                <div>
+                                    <h3 id="pname">Admin</h3>
+                                    <a href="profile.html">see your profile</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/feedback.png">
+                                <p>Give Feedback</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/setting.png">
+                                <p>Setting & Privacy</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/help-and-support.png">
+                                <p>Help & support</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/display.png">
+                                <p>Display & Accessibility</p>
+                                <span>></span>
+                            </a>
+                            <a id="signoutlink" href="" class="profile-menu-link">
+                                <img src="image/Logout.png">
+                                <p>Logout</p>
+                                <span>></span>
+                            </a>
+                        </div>
+                    </div>
+                   
+                    </i></a>
+                </li>
+                <li><a href="#">
+                        <div class="premium">Try premium</div>
+                    </a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <!------------------ navbar end --------------------->
+    <div class="container-box">
+        <!-- ----------------------left-sidebar-------------------------------- -->
+        <div class="left-sidebar">
+            <div class="sidebar-profile-box">
+                <img src="image/profile-bg-img.jpg" width="100%">
+                <div class="sidebar-profile-info">
+                    <img id="profileimg"src="image/profile.png">
+                    <h1 id="pn">Divya Sharma</h1>
+                    <h3>Web Developer at Microsoft</h3>
+                    <ul>
+                        <li>your profile views<span>52</span></li>
+                        <li>your post views<span>900</span></li>
+                        <li>your connections<span>500+</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-profile-link">
+                    <a href="#"><img src="image/free.png">My items</a>
+                    <a href="#"><img src="image/premium.jpg">Try Premium</a>
+                </div>
+            </div>
+            <div class="sidebar-activity">
+                <h3>RECENT</h3>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>web Development</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>user interface</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>Online Learning</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>Learn Online</a>
+                <a href="#"><i class="fa-sharp fa-solid fa-clock-rotate-left" class="icon"></i>Group Learning</a>
+                <h3>Groups</h3>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>Web Design Group</a>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>HTML & CSS Learner</a>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>Python &Javascript</a>
+                <a href="#"><i class="fa-solid fa-user-group" class="icon"></i>Learn Coding Online</a>
+                <h3>HASHTAG</h3>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <a href="#"><i class="fa-solid fa-hashtag" class="icon"></i>Learn Coding Online</a>
+                <div class="discover-more-links">
+                    <a href="#">Discover more</a>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------main-container----------------------- -->
+        <div class="main-container">
+            <div class="post">
+                <div class="post-input">
+                    <img src="./image/user1.jpg">
+                    <textarea rows="2" placeholder="Write a post" id="message"></textarea>
+                </div>
+                <div class="post-links">
+                    <li><label><i class="fa-sharp fa-solid fa-camera"><input type="file" id="image" accept="image/*"
+                                    style="display:none"></label></i>Photo</li>
+                    <li><label><i class="fa-solid fa-video"><input type="file" id="video" accept="video/*"
+                                    style="display:none"></i>Vedio</li>
+                    <li><i class="fa-solid fa-calendar-days"></i>Event</li>
+                    <li><button onclick="postMessage()" style="background-color: none;">Post</button></li>
+                </div>
+            </div>
+            <div class="short-list">
+                <hr>
+                <p>Sort by: <span>top <i class="fa-sharp fa-solid fa-angle-down"></i></span></p>
+            </div>
+            <div id="messages"></div>
+            <div class="posting">
+                <div class="posting-write">
+                    <img id="postimg" src="image/profile.png">
+                    <div>
+                        <h1>marry Farnandis</h1>
+                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
+                        <small>2 hours ago</small>
+                    </div>
+                </div>
+                <p>the achieving of desired results, or someone or something that achieves positive results: We've tried
+                    to contact him, but so far without success.
+                </p>
+                <img src="image/post-img3.jpg" width="100%">
+                <div class="post-stats">
+                    <div>
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <i class="fa-sharp fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-hands-clapping"></i>
+                        <span class="likes">Shivani rathore and 81 others</span>
+                    </div>
+                    <div>
+                        <span>22 comments &middot; 40 shares</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+                    <div>
+                        <img src="image/connection1.png" class="post-activity-user-icon">
+                        <img src="image/down-arrow.png" class="post-activity-arrow-icon">
+                    </div>
+
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <span>Send</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="posting">
+                <div class="posting-write">
+                    <img src="image/connection2.png">
+                    <div>
+                        <h1>James Walton</h1>
+                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
+                        <small>6 hours ago</small>
+                    </div>
+                </div>
+                <p>the achieving of desired results, or someone or something that achieves positive results: We've tried
+                    to contact him, but so far without success.
+                </p>
+                <img src="image/post-img1.jpg" width="100%">
+                <div class="post-stats">
+                    <div>
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <i class="fa-sharp fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-hands-clapping"></i>
+                        <span class="likes">afroj and 64 others</span>
+                    </div>
+                    <div>
+                        <span>54 comments &middot; 72 shares</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+                    <div>
+                        <img src="image/connection1.png" class="post-activity-user-icon">
+                        <img src="image/down-arrow.png" class="post-activity-arrow-icon">
+                    </div>
+                    
+                        <div class="post-activity-link">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <span>Like</span>
+                        </div>
+                        <div class="post-activity-link">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span>Comment</span>
+                        </div>
+                        <div class="post-activity-link">
+                            <i class="fa-solid fa-share"></i>
+                            <span>Share</span>
+                        </div>
+                        <div class="post-activity-link">
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <span>Send</span>
+                        </div>
+                    
+
+                </div>
+            </div>
+            <div class="posting">
+                <div class="posting-write">
+                    <img src="image/user2.jpg">
+                    <div>
+                        <h1>Anny Roy</h1>
+                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
+                        <small>2 days ago</small>
+                    </div>
+                </div>
+                <p>the achieving of desired results, or someone or something that achieves positive results: We've tried
+                    to contact him, but so far without success.
+                </p>
+                <img src="image/post-img2.jpg" width="100%">
+                <div class="post-stats">
+                    <div>
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <i class="fa-sharp fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-hands-clapping"></i>
+                        <span class="likes">Marcol and 89 others</span>
+                    </div>
+                    <div>
+                        <span>89 comments &middot; 102 shares</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+                    <div>
+                        <img src="image/connection1.png" class="post-activity-user-icon">
+                        <img src="image/down-arrow.png" class="post-activity-arrow-icon">
+                    </div>
+
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <span>Send</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <body>
+
+                <!-- <h2>Delete Modal</h2> -->
+
+                <!-- <button id="speed" onclick="document.getElementById('id01').style.display='block'">Open Modal</button> -->
+
+                <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                        title="Close Modal">×</span>
+                    <form class="modal-content" action="/action_page.php">
+                        <div class="container">
+                            <h1>Delete Post</h1>
+                            <p>Are you sure you want to delete your post?</p>
+
+                            <div class="clearfix">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                    class="cancelbtn">Cancel</button>
+                                <button type="button" id="indel"
+                                    onclick="document.getElementById('id01').style.display='none'"
+                                    class="deletebtn">Delete</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        <!-- --------------------------------------right-sideba-------------------------------- -->
+        <div class="right-sidebar">
+            <div class="sidebar-news">
+                <i class="fa-solid fa-circle-exclamation" class="info-icon"></i>
+                <h2>Trending news</h2>
+                <a href="#">High demand for skilled manpower</a>
+                <span>1d ago &middot; 10,943 readers</span>
+
+                <a href="#">Careers growing horizontally too</a>
+                <span>10d ago &middot; 1,455 readers</span>
+
+                <a href="#">less worrk visa for Us,more for UK</a>
+                <span>23d ago &middot; 2,843 readers</span>
+
+                <a href="#">more hiring = higher confidence?</a>
+                <span>25d ago &middot; 1,313 readers</span>
+
+                <a href="#">Goutam Adani is the world's third richest</a>
+                <span>28d ago &middot; 4,121 readers</span>
+
+                <a href="#" class="read-more-links">Read More</a>
+            </div>
+            <div class="sidebar-ad">
+                <small>Ad &middot;&middot;&middot; </small>
+                <p>Master 5 principle of web design</p>
+                <div>
+                    <img id="brandimg" src="image/user1.jpg">
+                    <img src="image/mi-icon.jpg" class="mi-icon">
+                </div>
+                <b>Brand and Demand in Xiomi</b>
+                <a href="#" class="ad-link">Learn More</a>
+            </div>
+            <div class="sidebar-useful-links">
+                <a href="#">About</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Help center</a>
+                <a href="#">Privacy policy</a>
+                <a href="#">Advertising</a>
+                <a href="#">Get the App</a>
+                <a href="#">More</a>
+                <div class="copyright-msg">
+                    <img src="image/Meetup_Logo.png">
+                    <p>Linkedup &#169; 2022. All right reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        "use strict";
+    
+        !function () {
+            var t = window.driftt = window.drift = window.driftt || [];
+            if (!t.init) {
+                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+                t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+                    t.factory = function (e) {
+                        return function () {
+                            var n = Array.prototype.slice.call(arguments);
+                            return n.unshift(e), t.push(n), t;
+                        };
+                    }, t.methods.forEach(function (e) {
+                        t[e] = t.factory(e);
+                    }), t.load = function (t) {
+                        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+                        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+                        var i = document.getElementsByTagName("script")[0];
+                        i.parentNode.insertBefore(o, i);
+                    };
+            }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('gg7bm5wvziuk');
+    </script>
+    <script src="home.js"></script>
+</body>
+
+</html>
