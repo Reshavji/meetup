@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#">
+                <img src="https://1000logos.net/wp-content/uploads/2021/05/Meetup-logo.png" alt="Logo"></a>
+        </div>
+             <div class="navbar-links" id="navbar-links">
+            <ul>
+                <li><a href="home.html" class="active"><i class="fas fa-home">
+                            <div class="menu-items">Home</div>
+                        </i></a></li>
+
+                <li><a href="message.html"><i class="fas fa-comment-alt">
+                            <div class="menu-items">Messaging</div>
+                        </i></a></li>
+                <li><a href="#"><i class="fas fa-bell">
+                            <div class="menu-items">Notifications</div>
+                        </i></a></li>
+                <li><a href="#">
+                        <img id="postimg" src="image/user1.jpg" class="user-img" onclick="toggleMenu()">
+                    </a> 
+                    <div class="profile-menu-wrap" id="profileMenu">
+                        <div class="profile-menu">
+                            <div class="user-info">
+                                <img id="profile" src="image/user1.jpg">
+                                <div>
+                                    <h3 id="pname">Admin</h3>
+                                    <a href="profile.html">see your profile</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/feedback.png">
+                                <p>Give Feedback</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/setting.png">
+                                <p>Setting & Privacy</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/help-and-support.png">
+                                <p>Help & support</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="profile-menu-link">
+                                <img src="image/display.png">
+                                <p>Display & Accessibility</p>
+                                <span>></span>
+                            </a>
+                            <a id="signoutlink" href="" class="profile-menu-link">
+                                <img src="image/Logout.png">
+                                <p>Logout</p>
+                                <span>></span>
+                            </a>
+                        </div>
+                    </div>
+            </li>
+            </ul>
+            <a href="#"><div class="premium">Try premium</div> </a>
+            
+        </div>
+    </nav>
+    <!------------------ navbar end --------------------->
+   
+    <div class="container-box">
+        <div class="profile-main">
+            <div class="profile-box">
+                <img src="image/profile-bg-img.jpg" width="100%">
+                <div class="profile-box-inner">
+                    <img id="proimg" src="image/user1.jpg" class="profile-img">
+                    <h1 id="pn">Admin</h1>
+                    <b>Web Developer & Graphic Designer | Developer at React and intern at Newton</b>
+                    <p>Indore india, Madhya pradesh &middot;<a href="#"> Contact info</a></p>
+                    <div class="connections">
+                        <img id="profileimg" src="image/connection1.png">
+                        <span>1 mutual connection: Prateek Chouhan</span>
+                    </div>
+                    <div class="profile-btn">
+                        <a href="#" class="btn1"><i class="fa-solid fa-user-plus"></i>Connect</a>
+                        <a href="#" class="btn1"><i class="fas fa-comment-alt"></i>Message</a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-description">
+                <h2>About</h2>
+                <p>A developer is a technology professional who works on, builds and creates software, websites,
+                    applications and other systems. Often, developers require a knowledge of coding to write and debug
+                    source code for applications and software effectively.</p>
+                <a href="#" class="more-links">See more...</a>
+            </div>
+            <div class="profile-description">
+                <h2>Experience</h2>
+                <div class="profile-desc-row">
+                    <img src="image/Microsoft.png">
+                    <div>
+                        <h3>Lead Front-end developer</h3>
+                        <b>Microsoft &middot; Full-time</b>
+                        <b>march 2022 present &middot; 1 year</b>
+                        <p>Computer programming is the process of performing a particular computation usually by
+                            designing
+                            and building an executable computer program.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="profile-desc-row">
+                    <img src="image/Slack.png">
+                    <div>
+                        <h3>Full stack Developer</h3>
+                        <b>Slack &middot; Full-time</b>
+                        <b>jan 2021 present &middot; 2.3 year</b>
+                        <p>Computer programming is the process of performing a particular computation usually by
+                            designing
+                            and building an executable computer program.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="profile-desc-row">
+                    <img src="image/goggle.jpg">
+                    <div>
+                        <h3>web Developer</h3>
+                        <b>Goggle &middot; Full-time</b>
+                        <b>Aug 2018 present &middot; 4.2 year</b>
+                        <p>Computer programming is the process of performing a particular computation usually by
+                            designing
+                            and building an executable computer program.</p>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="exp-link">Show all 4 experience<img src="image/right-arrow.png"></a>
+            </div>
+        </div>
+        <!-- --------------------profile-sidebar-------------- -->
+        <div class="profile-sidebar">
+            <div class="sidebar-ad">
+                <small>Ad &middot;&middot;&middot; </small>
+                <p>Master 5 principle of web design</p>
+                <div>
+                    <img id="brandimg" src="image/profile.png">
+                    <img src="image/mi-icon.jpg" class="mi-icon">
+                </div>
+                <b>Brand and Demand in Xiomi</b>
+                <a href="#" class="ad-link">Learn More</a>
+            </div>
+            <div class="sidebar-peoples">
+                <h3>People you may know</h3>
+                <div class="sidebar-people-row">
+                    <img src="image/connection2.png">
+                    <div>
+                        <h2>Sumit rathore</h2>
+                        <p>Professional freelancer</p>
+                        <a href="#">Connect</a>
+                    </div>
+                </div>
+                <div class="sidebar-people-row">
+                    <img src="image/connection2.jpg">
+                    <div>
+                        <h2>Soumil john</h2>
+                        <p>Professional freelancer</p>
+                        <a href="#">Connect</a>
+                    </div>
+                </div>
+                <div class="sidebar-people-row">
+                    <img src="image/connection1.png">
+                    <div>
+                        <h2>Tony Limmi</h2>
+                        <p>Professional freelancer</p>
+                        <a href="#">Connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- --------------footer start------------------  -->
+         <!-- <div id="footer">
+        <div class="icon">
+            <a class="btn btn-light btn-social mr-2"
+                href="https://www.facebook.com/profile.php?id=100070502261335"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/divya-sharma-8a218122a"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+            <a class="btn btn-light btn-social"
+                href=" https://www.instagram.com/invites/contact/?i=1v4qijoamnj3u&utm_content=mqrex7f"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="tags">
+            <p><b>Privacy</b> | <b>Terms</b> | <b>FAQs</b> | <b>Help</b></p>
+            <p>&copy<a href="#">copyright</a> All Rights Reserved. Designed by
+                <a href="https://htmlcodex.com">Divya Sharma</a>
+            </p>
+        </div>
+        <div class="container-flex">
+          Your Account
+            <ul>
+                <li><a href="#">Sign up</a></li>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Become an affiliate</a></li>
+            </ul>
+        </div>
+    </div> -->
+    <script src="profile.js"></script>
+    
+</body>
+</html>
