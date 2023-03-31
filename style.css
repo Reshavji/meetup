@@ -452,6 +452,14 @@ margin: 4px;
 .post{
 background-color: #fff;
 }
+.post-input textarea{
+  width: 100%;
+  border: 0;
+  outline: 0;
+  resize: none;
+  background: transparent;
+  margin-top: 8px;
+}
 .post-input{
   padding: 20px 25px 10px;
   display: flex;
