@@ -25,16 +25,17 @@ function AuthenticateUser() {
     get(child(dbref, "userList/" + username.value)).then((snapshot) => {
         if (snapshot.exists()) {
             let dbpass = decPass(snapshot.val().password);
-            console.log(dbpass);
             if (dbpass == pass.value) {
                 login(snapshot.val());
             }
             else {
-                alert("User does not exist!");
+                error1.innerHTML="Enter Correct Password !";
+                error2.innerHTML="";
             }
         }
         else {
-            alert("Username or Password is Invalid");
+            error1.innerHTML="";
+            error2.innerHTML="Username does not exist!";
         }
 
     });
@@ -45,7 +46,6 @@ function AuthenticateUser() {
 function decPass(dbpass) {
     var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
     return pass12.toString(CryptoJS.enc.Utf8);
-    console.log(pass12.toString(CryptoJS.enc.Utf8));
 }
 //..................................Login..........................//
 function login(user) {

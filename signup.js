@@ -20,7 +20,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebas
     const pass = document.getElementById('passInp');
     const submit = document.getElementById('sub_btn');
     const msgshow = document.getElementById('box');
-    const error = document.getElementById('error');
+    // const error = document.getElementById('error1');
     //..........................................Validation.............................//
     
     function isEmptyOrSpaces(str){
@@ -33,29 +33,40 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebas
         let passregex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         
         if(isEmptyOrSpaces(name.value)|| isEmptyOrSpaces(email.value)|| isEmptyOrSpaces(username.value)|| isEmptyOrSpaces(pass.value)){
-            alert("Please fill all the empty fields!");
             error.innerHTML="Please fill all the empty fields!";
             return false;
         }
-        
-        if(!emailregex.test(email.value)){
-          alert("Enter a valid email!");
-          error.innerHTML="Enter a valid email!";
+        if(!nameregex.test(name.value)){
+            error1.innerHTML="Enter URL not correct!";
+            return false;
+          }
+          else{
+            error1.innerHTML="";
+          }
+       if(!emailregex.test(email.value)){
+          error2.innerHTML="Enter a valid email!";
           return false;
+        }
+        else{
+            error2.innerHTML="";
         }
         if(!userregex.test(username.value)){
-          alert("The name should only contain alphabets without space!");
+          error3.innerHTML="The name should only contain alphabets";
+            
           return false;
         }
-        if(!nameregex.test(name.value)){
-            alert("Enter URL not correct!");
-            return false;
-          }
+        else{
+            error3.innerHTML="";
+        }
+       
           if(!passregex.test(pass.value)){
-            alert("Password should be Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!");
-            error.innerHTML="Password should be Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!";
+             error4.innerHTML="Password should be Minimum 8 characters, At least one uppercase letter, one lowercase letter, one number and one special character!";
             return false;
           }
+          else{
+            error4.innerHTML="";
+          }
+
         return true;
     }
     //.............................................Register User........................//
