@@ -45,7 +45,9 @@ function AuthenticateUser() {
 //.................................Decryption.......................//
 function decPass(dbpass) {
     var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
-    return pass12.toString(CryptoJS.enc.Utf8);
+    var password= pass12.toString(CryptoJS.enc.Utf8);
+    console.log(password);
+    return password;
 }
 //..................................Login..........................//
 function login(user) {
